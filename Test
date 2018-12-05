@@ -1,0 +1,40 @@
+ …or push an existing repository from the command line
+ 
+package natal;
+
+import java.util.*;
+
+public class Natal {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+    Scanner read = new Scanner(System.in);
+    int n;
+    String nome;
+    List<String> bom=new ArrayList<>();
+    List<String> mau=new ArrayList<>();
+    
+    //ler o numero de pessoas na lista
+    n=read.nextInt();
+    read.nextLine();
+    for(int i=0;i<n;i++){
+        nome=read.nextLine();
+        if(nome.charAt(0)=='+')
+            bom.add(nome);
+        //contB++;
+        else
+            mau.add(nome);
+    }
+    Collections.sort(mau);
+    Collections.sort(bom);
+    
+        System.out.println("Numero de Comportados: "+bom.size());
+        System.out.println(bom);
+        System.out.println("Numero de Não Comportados: "+mau.size());
+        System.out.println(mau);
+        
+    }
+    
+}
